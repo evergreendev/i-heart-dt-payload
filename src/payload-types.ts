@@ -17,6 +17,7 @@ export interface Config {
     testimonials: Testimonial;
     hours: Hour;
     letters: Letter;
+    videos: Video;
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
@@ -32,6 +33,7 @@ export interface Config {
     testimonials: TestimonialsSelect<false> | TestimonialsSelect<true>;
     hours: HoursSelect<false> | HoursSelect<true>;
     letters: LettersSelect<false> | LettersSelect<true>;
+    videos: VideosSelect<false> | VideosSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
@@ -443,6 +445,20 @@ export interface Hour {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "videos".
+ */
+export interface Video {
+  id: number;
+  title: string;
+  description?: string | null;
+  thumbnail: number | Media;
+  videoFile: number | Media;
+  category?: 'meet-the-merchants' | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -682,6 +698,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'letters';
         value: number | Letter;
+      } | null)
+    | ({
+        relationTo: 'videos';
+        value: number | Video;
       } | null)
     | ({
         relationTo: 'redirects';
@@ -987,6 +1007,19 @@ export interface LettersSelect<T extends boolean = true> {
   date?: T;
   content?: T;
   featured?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "videos_select".
+ */
+export interface VideosSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  thumbnail?: T;
+  videoFile?: T;
+  category?: T;
   updatedAt?: T;
   createdAt?: T;
 }

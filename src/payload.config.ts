@@ -3,6 +3,7 @@ import * as nodeMailer from "nodemailer";
 import { Media } from './collections/Media'
 import { Pages } from '@/collections/Pages'
 import Hours from '@/collections/Hours'
+import { Videos } from './collections/Videos'
 
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
@@ -61,7 +62,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media,Pages, Testimonials, Hours, Letters],
+  collections: [Users, Media, Pages, Testimonials, Hours, Letters, Videos],
   globals: [Header, Footer, SiteOptions],
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -75,7 +76,7 @@ export default buildConfig({
         BoldFeature(),
         ItalicFeature(),
         LinkFeature({
-          enabledCollections: ['pages', 'media'],
+          enabledCollections: ['pages', 'media', 'videos'],
           fields: ({ defaultFields }) => {
             const defaultFieldsWithoutUrl = defaultFields.filter((field) => {
               return !('name' in field && field.name === 'url');
