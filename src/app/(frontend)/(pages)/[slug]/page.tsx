@@ -63,9 +63,6 @@ export default async function Page({ params: paramsPromise }: Args) {
         <div className="w-full mx-auto">
           <Header centerNav={false} />
           {images && images.length > 0 && <Hero images={images} logo={siteOptions.siteLogoLight} />}
-          <h1 className="border-b-brand-accent-500 border-b-4 text-4xl font-bold font-display text-center p-6 text-white bg-brand-primary-600 sm:text-5xl md:text-6xl">
-            {page.title === 'Home' ? 'World Famous Pioneer Auto Show' : page.title}
-          </h1>
           <div className="hidden md:block z-50 bg-brand-primary-500 text-white border-b border-blue-950">
             <div className="container max-w-screen-lg p-2 flex flex-wrap justify-between items-center">
               <div className="flex flex-col items-center">
