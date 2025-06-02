@@ -59,10 +59,10 @@ export default async function Home() {
               />
             ) : null}
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4" style={{textShadow: '0 0 5px #000000'}}>
             I <span className="text-primary">💙</span> Downtown Rapid City
           </h1>
-          <h2 className="text-2xl md:text-3xl mb-8">
+          <h2 className="text-2xl md:text-3xl mb-8" style={{textShadow: '0 0 5px #000000'}}>
             Celebrate the heart of Rapid City and the people who make it truly special.
           </h2>
           <div className="flex">
