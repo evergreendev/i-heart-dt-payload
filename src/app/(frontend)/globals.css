@@ -15,33 +15,43 @@
     }
 
     :root {
-        --background: 79.64 15% 87.73%;
-        --foreground: 0 0% 0%;
+        /* Primary colors */
+        --primary-blue: 210 70% 70%; /* #89BADD (assuming this is the correct color) */
+        --primary-dark: 40 4% 16%; /* #2D2B28 */
 
-        --card: 211 24% 25%;
-        --card-foreground: 210 40% 98%;
+        /* CMYK converted colors */
+        --deep-blue: 220 100% 31%; /* #0033A0 (c 100 m 90 y 10 k 0) */
+        --dark-gray: 60 3% 11%; /* #1C1C1A (c 68 m 64 y 66 k 66) */
+        --amber: 40 100% 48%; /* #F5A800 (c 0 m 47 y 100 k 0) */
 
-        --popover: 222.2 84% 4.9%;
-        --popover-foreground: 210 40% 98%;
+        /* System colors */
+        --background: var(--primary-blue);
+        --foreground: var(--primary-dark);
 
-        --primary: 210 40% 98%;
-        --primary-foreground: 222.2 47.4% 11.2%;
+        --card: var(--deep-blue);
+        --card-foreground: var(--primary-blue);
 
-        --secondary: 217.2 32.6% 17.5%;
-        --secondary-foreground: 210 40% 98%;
+        --popover: var(--dark-gray);
+        --popover-foreground: var(--primary-blue);
 
-        --muted: 217.2 32.6% 17.5%;
-        --muted-foreground: 215 20.2% 65.1%;
+        --primary: var(--primary-blue);
+        --primary-foreground: var(--primary-dark);
 
-        --accent: 217.2 32.6% 17.5%;
-        --accent-foreground: 210 40% 98%;
+        --secondary: var(--deep-blue);
+        --secondary-foreground: var(--primary-blue);
+
+        --muted: var(--dark-gray);
+        --muted-foreground: var(--primary-blue);
+
+        --accent: var(--amber);
+        --accent-foreground: var(--primary-dark);
 
         --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 210 40% 98%;
+        --destructive-foreground: var(--primary-blue);
 
-        --border: 223 58% 43%;
-        --input: 217.2 32.6% 17.5%;
-        --ring: 212.7 26.8% 83.9%;
+        --border: var(--deep-blue);
+        --input: var(--dark-gray);
+        --ring: var(--primary-blue);
 
         --success: 196 100% 14%;
         --warning: 34 51% 25%;

@@ -3,7 +3,8 @@ import type { Metadata } from 'next'
 import { cn } from 'src/utilities/cn'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
-import { Playball, Roboto_Condensed, Bree_Serif } from 'next/font/google'
+import { Yellowtail } from 'next/font/google'
+import localFont from 'next/font/local'
 import React from 'react'
 
 import { AdminBar } from '@/components/AdminBar'
@@ -12,24 +13,34 @@ import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
 import './globals.css'
 
-const playball = Playball({
-  subsets:['latin'],
-  weight: ["400"],
-  variable: "--font-playball",
-  display: "swap"
-})
-
-const breeSerif = Bree_Serif({
-  subsets:['latin'],
-  weight: ["400"],
-  variable: "--font-bree-serif",
-  display: "swap"
-})
-
-const robotoCondensed = Roboto_Condensed({
+const yellowtail = Yellowtail({
   subsets: ['latin'],
-  weight: ["400", "100", "200", "300", "500", "900"],
-  variable: "--font-roboto",
+  weight: ["400"],
+  variable: "--font-yellowtail",
+  display: "swap"
+})
+
+const quatro = localFont({
+  src: [
+    {
+      path: '../../fonts/Quatro.woff2',
+      weight: '400',
+      style: 'normal',
+    }
+  ],
+  variable: "--font-quatro",
+  display: "swap"
+})
+
+const quatroSlab = localFont({
+  src: [
+    {
+      path: '../../fonts/QuatroSlab.woff2',
+      weight: '400',
+      style: 'normal',
+    }
+  ],
+  variable: "--font-quatro-slab",
   display: "swap"
 })
 
@@ -37,7 +48,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const { isEnabled } = await draftMode()
 
   return (
-    <html className={cn(GeistSans.variable, GeistMono.variable, breeSerif.variable, playball.variable, robotoCondensed.variable)} lang="en" suppressHydrationWarning>
+    <html className={cn(GeistSans.variable, GeistMono.variable, quatro.variable, quatroSlab.variable, yellowtail.variable)} lang="en" suppressHydrationWarning>
       <head>
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />

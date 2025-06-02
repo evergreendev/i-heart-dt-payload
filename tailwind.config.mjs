@@ -127,8 +127,9 @@ export default {
       },
       fontFamily: {
         mono: ['var(--font-geist-mono)'],
-        sans: ['var(--font-roboto)'],
-        display: ['var(--font-bree-serif)'],
+        sans: ['var(--font-quatro)'],
+        display: ['var(--font-quatro-slab)'],
+        script: ['var(--font-yellowtail)'],
       },
       keyframes: {
         'accordion-down': {

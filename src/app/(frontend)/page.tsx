@@ -29,7 +29,7 @@ export default async function Home() {
   const siteOptions: SiteOption = (await getCachedGlobal('siteOptions', 1)()) as SiteOption;
 
   return (
-    <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen font-display">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center">
         <Image
@@ -60,7 +60,7 @@ export default async function Home() {
             ) : null}
           </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
-            I <span className="text-blue-600">💙</span> Downtown Rapid City
+            I <span className="text-primary">💙</span> Downtown Rapid City
           </h1>
           <h2 className="text-2xl md:text-3xl mb-8">
             Celebrate the heart of Rapid City and the people who make it truly special.
@@ -80,13 +80,13 @@ export default async function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#merchants"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-colors"
+              className="bg-deep-blue hover:bg-secondary text-white font-bold py-3 px-6 rounded-full transition-colors"
             >
               Meet the Merchants
             </a>
             <a
               href="#share"
-              className="bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-6 rounded-full transition-colors"
+              className="bg-white hover:bg-gray-100 text-primary font-bold py-3 px-6 rounded-full transition-colors"
             >
               Share the Love
             </a>
@@ -98,7 +98,7 @@ export default async function Home() {
       <VideoCollection videos={videos} />
 
       {/* User Engagement & Community Participation */}
-      <section id="share" className="py-20 bg-gray-100 text-gray-600">
+      <section id="share" className="py-20 bg-primary-blue/20 text-primary-dark">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4">Share the Love</h2>
           <p className="text-lg text-center max-w-3xl mx-auto mb-12">
@@ -109,29 +109,29 @@ export default async function Home() {
             <h3 className="text-2xl font-bold mb-4">How to Join the Fun:</h3>
             <ul className="space-y-4 mb-8">
               <li className="flex items-start">
-                <span className="text-blue-600 mr-2">💙</span>
+                <span className="text-primary mr-2">💙</span>
                 <span>
                   <strong>Visit Downtown Businesses:</strong> Support your favorite local spots and
                   discover new gems!
                 </span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-600 mr-2">💙</span>
+                <span className="text-primary mr-2">💙</span>
                 <span>
                   <strong>Share the Love:</strong> Post on social media using #IHeartDowntownRC and
                   let everyone know what makes our downtown unique.
                 </span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-600 mr-2">💙</span>
+                <span className="text-primary mr-2">💙</span>
                 <span>
                   <strong>Spot the Stickers:</strong> Look for &#34;I{' '}
-                  <span className="text-blue-600">💙</span> Downtown Rapid City&#34; stickers and
+                  <span className="text-primary">💙</span> Downtown Rapid City&#34; stickers and
                   banners around town—snap a photo and share your pride!
                 </span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-600 mr-2">💙</span>
+                <span className="text-primary mr-2">💙</span>
                 <span>
                   <strong>Be a Part of the Story:</strong> Check out our &#34;Meet the
                   Merchants&#34; video series to hear why local business owners love being part of
