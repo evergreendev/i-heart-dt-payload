@@ -26,7 +26,7 @@ import type { SiteOption } from '@/payload-types'
 export default async function Home() {
 
   const videos = await fetchVideos();
-  const siteOptions: SiteOption = (await getCachedGlobal('siteOptions', 1)()) as SiteOption;
+  const siteOptions: SiteOption = (await getCachedGlobal('siteOptions', 2)()) as SiteOption;
 
   return (
     <div className="min-h-screen font-display">
