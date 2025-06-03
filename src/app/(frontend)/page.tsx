@@ -4,9 +4,11 @@ import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import type { SiteOption } from '@/payload-types'
+import { unstable_cache } from 'next/cache'
 
 
-  const fetchVideos = async () => {
+const fetchVideos = unstable_cache(
+  async () => {
     const payload = await getPayload({ config: configPromise })
     const result = await payload.find({
       collection: 'videos',
@@ -20,7 +22,12 @@ import type { SiteOption } from '@/payload-types'
     })
 
     return result.docs
-  }
+  },
+  ['videos'],
+  {
+    tags: ['videos'],
+  },
+)
 
 
 export default async function Home() {

@@ -2,6 +2,7 @@ import type { CollectionConfig } from 'payload'
 
 import { anyone } from '@/access/anyone'
 import { authenticated } from '@/access/authenticated'
+import { revalidateVideos } from './Videos/hooks/revalidateVideos'
 
 export const Videos: CollectionConfig = {
   slug: 'videos',
@@ -51,4 +52,7 @@ export const Videos: CollectionConfig = {
       defaultValue: 'meet-the-merchants',
     },
   ],
+  hooks: {
+    afterChange: [revalidateVideos],
+  },
 }
